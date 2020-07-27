@@ -1,0 +1,61 @@
+[buildPlans.cyo]                       # Execute command to make font: npm run build -- ttf:cyo
+family = "cyo"                         # Font menu family name
+design = [                             # Customize styles
+    "common-styles",
+
+    # ligatures
+    "calt-eqeq", # ==
+    "calt-ineq",
+    "calt-exeq",
+    "calt-arrow",
+    "calt-plusplus",
+    "calt-colons",
+
+    # operators
+    "calt-center-ops",
+
+    # width
+    # "expanded",
+
+    # individual letters,
+    "v-f-tailed",
+    "v-g-doublestorey",
+    "v-m-shortleg",
+    "v-dollar-open", # $i
+    "v-at-fourfold", # @
+    "v-l-italic",
+    "v-i-italic",
+    "v-y-curly",
+    "v-underscore-low",
+    "v-percent-rings",
+
+    # linespace_underscore
+    # "leading-1750",
+]
+
+upright = ["upright-only", "styles"]   # Upright-only styles
+italic = ["italic-only", "styles"]     # Italic-only styles
+oblique = ["oblique-only", "styles"]   # Oblique-only styles
+
+# Override default building weights
+# When buildPlans.<plan name>.weights is absent
+# All weights would built and mapped to default shape/CSS
+[buildPlans.cyo.weights.regular]
+shape = 400                            # Weight for glyph shapes
+menu  = 400                            # Weight for menu name
+css   = 400                            # Weight for webfont CSS
+
+[buildPlans.cyo.weights.bold]
+shape = 700
+menu  = 700
+css   = 700
+# end weight section
+
+
+# Override default building slant sets
+# Format: <upright|italic|oblique> = <"normal"|"italic"|"oblique">
+# When this section is absent, all slants would be built.
+[buildPlans.cyo.slants]
+upright = "normal"
+italic = "italic"
+oblique = "oblique"
